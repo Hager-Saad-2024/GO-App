@@ -22,6 +22,7 @@ jobs:
           go-version: 1.21
 
       - name: Build Go app
+        working-directory: ./src
         run: |
           go mod tidy
           go build -o survey ./main.go
