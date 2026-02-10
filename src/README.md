@@ -169,8 +169,6 @@ mongo-local (172.19.0.2:27017) open
 
 ## 8️⃣ Testing the Survey API
 
-### POST a Survey Answer
-
 Send a POST request to submit survey answers:
 
 ```bash
