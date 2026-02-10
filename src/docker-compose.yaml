@@ -1,15 +1,15 @@
 version: "3.9"
 services:
   app:
-    build: .
-    container_name: survey-app
+    build: . # Build the Docker image from the current directory (Dockerfile must exist)
+    container_name: survey-app # Name of the container
     ports:
-      - "8080:8080"
+      - "8080:8080" # Map host port 8080 to container port 8080
     environment:
-      SERVICE_PORT: 8080
-      MONGO_URL: mongodb://mongo:27017
+      SERVICE_PORT: 8080 # Environment variable used by the Go app for server port
+      MONGO_URL: mongodb://mongo:27017 # Connection string for MongoDB (service name "mongo" inside Docker network)
     depends_on:
-      - mongo
+      - mongo # Ensure MongoDB container starts before the Go app
   mongo:
     image: mongo:7
     container_name: mongo-local
