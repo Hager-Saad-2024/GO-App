@@ -262,7 +262,7 @@ docker-compose down
 
 ---
 
-## 1️⃣1️⃣ Additional Notes
+##  Additional Notes
 
 * Go version: **1.21**
 * MongoDB driver: **mongo-go-driver v1.17.8**
