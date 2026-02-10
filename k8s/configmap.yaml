@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-app-conf
+data:
+  SERVIC_PORT: "8080"
+  MONGO_URL: "mongodb://mongo:27017"
