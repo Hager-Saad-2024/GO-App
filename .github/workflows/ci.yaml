@@ -40,5 +40,4 @@ jobs:
 
       - name: Push Docker image to dockerhub
         run: |
-          docker push hagersaad329/repo-test:${{ github.sha }}
           docker push hagersaad329/repo-test:v${{ github.run_number }}
