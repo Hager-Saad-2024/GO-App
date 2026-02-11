@@ -26,5 +26,5 @@ jobs:
             - name: fake deployment
               run: | 
                 echo "------------------------------------"
-                cho "kubectl apply -f k8s/"
+                echo "kubectl apply -f k8s/"
                 echo "✅ Deployment simulation complete!"
