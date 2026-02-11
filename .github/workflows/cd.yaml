@@ -1,0 +1,30 @@
+name: Deploy Docker Image
+
+on:
+    workflow_run:
+        workflows: ["Build and Push Docker Image"]
+        types:
+            - completed
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v3
+            
+            - name: set up kubectl
+              uses: azure/setup-kubectl@v3
+              with:
+                version: 'latest'
+            - name: set images tag
+              run: |
+                echo "IMAGE_TAG=v${{ github.event.workflow_run.run_number }}" >> $GITHUB_ENV
+            
+            - name: fake deployment
+              run: | 
+                echo "------------------------------------"
+                cho "kubectl apply -f k8s/"
+                echo "✅ Deployment simulation complete!"
