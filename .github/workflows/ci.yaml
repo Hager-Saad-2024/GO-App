@@ -36,9 +36,9 @@ jobs:
       - name: Build Docker images
         run: |
           docker build -t hagersaad329/repo-test:${{ github.sha }} ./src
-          docker tag hagersaad329/repo-test:${{ github.sha }} hagersaad329/repo-test:v2
+          docker tag hagersaad329/repo-test:${{ github.sha }} hagersaad329/repo-test:v${{ github.run_number }}
 
       - name: Push Docker image to dockerhub
         run: |
           docker push hagersaad329/repo-test:${{ github.sha }}
-          docker push hagersaad329/repo-test:v2
+          docker push hagersaad329/repo-test:v${{ github.run_number }}
