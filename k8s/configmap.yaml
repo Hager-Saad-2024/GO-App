@@ -4,4 +4,4 @@ metadata:
   name: go-app-conf
 data:
   SERVIC_PORT: "8080"
-  MONGO_URL: "mongodb://mongo:27017"
+  MONGO_URL: "mongodb://mongo-srv:27017"
